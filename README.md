@@ -40,3 +40,9 @@ Adresse MAC de la passerelle : 7c-5a-1c-cb-fd-a4
 
 IP : 10.33.48.118
 MAC : DC-46-28-B5-66-57
+
+## 2. Modifications des informations
+
+#### 🌞 Utilisez l'interface graphique de votre OS pour changer d'adresse IP :
+
+```Paramètres > Réseau et Internet > WiFi > Propriétés du matériel> Attribution de l'adresse IP > Modifier > Manuel```
