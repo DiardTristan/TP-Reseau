@@ -50,3 +50,26 @@ MAC : DC-46-28-B5-66-57
 #### 🌞 Il est possible que vous perdiez l'accès internet
 
 Dans le cas où on perd internet, c'est parce qu'il y'a déjà une machine qui utilise cette IP 
+
+#### 🌞 Modifiez l'IP des deux machines pour qu'elles soient dans le même réseau
+
+Mon IP : 10.10.10.251
+L'IP de l'autre machine : 10.10.10.250
+
+#### 🌞 Vérifier à l'aide d'une commande que votre IP a bien été changée
+
+```ìpconfig```
+
+#### 🌞 Vérifier que les deux machines se joignent
+
+```ping 10.10.10.250```
+
+    Réponse de 10.10.10.250 : octets=32 temps<1ms TTL=128
+    Réponse de 10.10.10.250 : octets=32 temps<1ms TTL=128
+    Réponse de 10.10.10.250 : octets=32 temps=1 ms TTL=128
+    Réponse de 10.10.10.250 : octets=32 temps=4 ms TTL=128
+
+    Statistiques Ping pour 10.10.10.250:
+    Paquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0%),
+    Durée approximative des boucles en millisecondes :
+    Minimum = 0ms, Maximum = 4ms, Moyenne = 1ms```
