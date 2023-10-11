@@ -60,6 +60,14 @@ L'IP de l'autre machine : 10.10.10.250
 
 ```ìpconfig```
 
+    Carte Ethernet Ethernet :
+
+   Suffixe DNS propre à la connexion. . . :
+   Adresse IPv6 de liaison locale. . . . .: fe80::eece:216c:93d6:d1d1%17
+   Adresse IPv4. . . . . . . . . . . . . .: 10.10.10.251
+   Masque de sous-réseau. . . . . . . . . : 255.255.255.0
+   Passerelle par défaut. . . . . . . . . :
+
 #### 🌞 Vérifier que les deux machines se joignent
 
 ```ping 10.10.10.250```
