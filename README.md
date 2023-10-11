@@ -4,5 +4,4 @@
 
 #### 🌞 Affichez les infos des cartes réseau de votre PC
 
-<section> test
-</section>
+```test ```
