@@ -46,3 +46,7 @@ MAC : DC-46-28-B5-66-57
 #### 🌞 Utilisez l'interface graphique de votre OS pour changer d'adresse IP :
 
 ```Paramètres > Réseau et Internet > WiFi > Propriétés du matériel> Attribution de l'adresse IP > Modifier > Manuel```
+
+#### 🌞 Il est possible que vous perdiez l'accès internet
+
+Dans le cas où on perd internet, c'est parce qu'il y'a déjà une machine qui utilise cette IP 
