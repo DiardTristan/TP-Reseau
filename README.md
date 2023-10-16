@@ -53,8 +53,8 @@ Dans le cas où on perd internet, c'est parce qu'il y'a déjà une machine qui u
 
 #### 🌞 Modifiez l'IP des deux machines pour qu'elles soient dans le même réseau
 
-Mon IP : 10.10.10.251
-L'IP de l'autre machine : 10.10.10.250
+Mon IP : 10.10.10.251/24
+L'IP de l'autre machine : 10.10.10.250/24
 
 #### 🌞 Vérifier à l'aide d'une commande que votre IP a bien été changée
 
