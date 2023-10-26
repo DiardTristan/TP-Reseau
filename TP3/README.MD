@@ -78,7 +78,8 @@ PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 
 ##### Pour récuperer la tram :
 
-```[tristan@localhost ~]$ sudo tcpdump -i enp0s3 -c 50 -w test.pcapng
+```
+[tristan@localhost ~]$ sudo tcpdump -i enp0s3 -c 50 -w test.pcapng
 dropped privs to tcpdump
 tcpdump: listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 ^C33 packets captured
@@ -88,6 +89,7 @@ tcpdump: listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 26214
 
 ##### Pour récupérer la tram sur le PC :
 
-```PS C:\Users\trist> scp tristan@10.3.1.11:/home/tristan/tp3.pcapng .
+```
+PS C:\Users\trist> scp tristan@10.3.1.11:/home/tristan/tp3.pcapng .
 tristan@10.3.1.11's password:
 tp3.pcapng                                                          100% 4954   919.9KB/s   00:00```
