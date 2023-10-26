@@ -17,7 +17,8 @@ PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 #### observer les tables ARP des deux machines
 
 ##### Mac de John depuis Marcel
-```console
+
+``` console
 [tristan@localhost ~]$ ip neigh show
 10.3.1.1 dev enp0s3 lladdr 0a:00:27:00:00:3d DELAY
 10.3.1.11 dev enp0s3 lladdr 🌟08:00:27:05:10:e2🌟 STALE```
@@ -25,7 +26,7 @@ PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 
 ##### Mac de Marcel depuis John
 
-```console
+``` console
 [tristan@localhost ~]$ ip neigh show
 10.3.1.12 dev enp0s3 lladdr 🌟08:00:27:d1:a0:9a REACHABLE🌟
 10.3.1.1 dev enp0s3 lladdr 0a:00:27:00:00:3d REACHABLE```
@@ -34,7 +35,7 @@ PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 
 ##### MAC De Marcel
 
-```console
+``` console
 [tristan@localhost ~]$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -51,7 +52,7 @@ PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 
 ##### MAC de John
 
-```console 
+``` console 
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
