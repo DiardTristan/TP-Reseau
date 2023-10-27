@@ -32,4 +32,10 @@ Carte réseau sans fil Wi-Fi :
 
    #### 🌞 Capturer un échange DHCP
 
-   [Lese 4 Trames DHCP](TP4-DoraEtBabouche.pcapng)
+   [Les 4 Trames DHCP](tp4_dhcp_client.pcapng)
+
+   #### 🌞 Analyser la capture Wireshark
+
+   ##### C'est la seconde trame (Offer) qui contient les informations proposées au client.
+
+   ## II. Serveur DHCP
