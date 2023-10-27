@@ -29,3 +29,7 @@ Carte réseau sans fil Wi-Fi :
                                        1.1.1.1
    NetBIOS sur Tcpip. . . . . . . . . . . : Activé
    ```
+
+   #### 🌞 Capturer un échange DHCP
+
+   [Lese 4 Trames DHCP] <TP4-DoraEtBabouche.pcapng>
