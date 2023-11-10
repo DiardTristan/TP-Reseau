@@ -13,3 +13,19 @@
 - Site KFC nan c'est trop je pleure sur le poulet carrément 🍗 : 21.1.254.130:443 | port local : 53323 (TCP) 🦈 [Le ptit pote](TP5_service_4.pcapng)
 
 - sit internette Projet Voltaire poure apprendr franssé : 104.22.4.149:443 | porc locale : 443 (TCP) 🦈 [Le ptit pote](TP5_service_5.pcapng)
+
+#### 🌞 Demandez l'avis à votre OS (à faire)
+
+## 1. SSH
+
+#### 🌞 Examinez le trafic dans Wireshark
+
+- déterminez si SSH utilise TCP ou UDP
+C'est forcément du TCP pour éviter de perdre des paquets.
+
+**Depuis le PC**
+  ```TCP    10.5.1.1:58108         10.5.1.11:ssh          ESTABLISHED```
+
+
+**Depuis la VM**
+  ```tcp        ESTAB      0           52                                 10.5.1.11:ssh                   10.5.1.1:58108```
