@@ -62,3 +62,28 @@ PING ynov.com (104.26.10.233) 56(84) bytes of data.
 3 packets transmitted, 3 received, 0% packet loss, time 10160ms
 rtt min/avg/max/mdev = 24.257/26.260/27.337/1.417 ms
 ```
+
+#### 🌞 Installez le paquet nginx
+
+```sudo dnf instal nginx```
+
+#### 🌞 Créer le site web
+
+```
+cd /var/
+sudo mkdir www
+sudo mkdir www/site_web_nul
+sudo nano www/site_web_nul/index.html
+```
+
+#### 🌞 Donner les bonnes permissions
+
+```sudo chown -R nginx:nginx /var/www/site_web_nul```
+
+#### 🌞 Créer un fichier de configuration NGINX pour notre site web
+
+```sudo nano /etc/nginx/conf.d/site_web_nul_conf```
+
+#### 🌞 Démarrer le serveur web !
+
+```sudo systemctl start nginx```
