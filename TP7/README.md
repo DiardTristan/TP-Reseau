@@ -133,3 +133,94 @@ Host key verification failed.
 ```
 10.7.1.11 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINUbbTUR8SqkLdNNrLGEUSTPjjy237qaRxkwWBrO57WX
 ```
+
+## Web
+
+#### 🌞 Montrer sur quel port est disponible le serveur web
+
+
+```
+[tristan@web ~]$ ss -atnl
+State   Recv-Q  Send-Q   Local Address:Port     Peer Address:Port  Process
+LISTEN  0       511            0.0.0.0:80            0.0.0.0:*
+LISTEN  0       128            0.0.0.0:22            0.0.0.0:*
+LISTEN  0       511               [::]:80               [::]:*
+LISTEN  0       128               [::]:22               [::]:*
+```
+
+```console
+[tristan@web ~]$ sudo openssl req -new -newkey rsa:2048 -days 365 -nodes -
+    x509 -keyout server.key -out server.crt
+Ignoring -days without -x509; not generating a certificate
+........+..+.........+.+.....+...+....+..+.+...+.........+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+............+..+...+............+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*......+......+......+....+.....+......+.............+..+..........+......+...............+...+..+.............+..............+.+..+...+.+.....+.+...+.....+.+...........+............+...+....+...+...+.....+.......+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+..+...+........+...+......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..........+......+..+..........+..+.+......+...+..+......+....+........+.+...............+......+.....+......+...+.+.....+...+...+.........+.+...............+..+............+...+......+....+...+...+.....+......+...+.............+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.....+.+..............+.......+...+.........+......+............+...+.....+....+..+....+.....+.+...........+....+.....+......+....+...+......+..+...+....+..+....+...........+......+...+.........+......+...............+.+........+.+..+..........+........+.......+.....+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [XX]:
+State or Province Name (full name) []:
+Locality Name (eg, city) [Default City]:
+Organization Name (eg, company) [Default Company Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (eg, your name or your server's hostname) []:
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+-----BEGIN CERTIFICATE REQUEST-----
+MIIChzCCAW8CAQAwQjELMAkGA1UEBhMCWFgxFTATBgNVBAcMDERlZmF1bHQgQ2l0
+eTEcMBoGA1UECgwTRGVmYXVsdCBDb21wYW55IEx0ZDCCASIwDQYJKoZIhvcNAQEB
+BQADggEPADCCAQoCggEBAKPEyFylcQBMakD6SYMbk/kLEukWczhHH/AbvSQTF2E2
+VIMKa0GQvH8NHEWAmH16Yrh+1TfZLEhr9zzRmwYEn6xh3/lJghAG8hPnd9qZrDSZ
+u8YVy2V+hMctMkapXi0NIShV8HLlQQljizDO8Sjt+hHqlc3AG3w2jo26hM+1k+eQ
+SAi8gs/BQm1yI54tDsFm2WMqatkIkcEZnqZK/fYUizdRbuVCwN4AZnOrzay8vqOa
+Sg70Jnq5nDCv6rKj4lKHJUinyPMkxSiMqcOxCUyA4l/eXqexRLjzhQNOpi7RH9Oh
+jbdTzqcyc9FrQuv3vjkNDB9CDP3Bdzcxw40Us1MugGcCAwEAAaAAMA0GCSqGSIb3
+DQEBCwUAA4IBAQCid903IdG1pnCRw6i19HJ9l5e8R31nV+3ABfQL6JScaCvI88O3
+/+22bWyMRqspbK+XFsh+PerH4XU8MlYPVMP+oWRbouaALZmt1l3oXQBatvXBQgRf
+EFig8uC+jUss8rwB3mKhCuv94FE7D59TYMON8H6LGDD1yjo/w8Bucvi5lEjQeHw5
+m7Rj7LL8g6K2Y2FT9hCUzexgSF2J/wMHYYlbFj3Q39cd7cmptFIKtPDEZTTW77aQ
+xWGaWKULwqqnC2Vnj5MvdOlHAGo2poaec9cnVyxZ1bh4k/7pOdZ/7OP9ZvcfSgfg
+dHLiTgZZqx3ipTVQQqyJEi6mtkrbSwSsnEyQ
+-----END CERTIFICATE REQUEST-----
+-bash: x509: command not found
+```
+
+
+#### 🌞 Modification de la conf de NGINX
+```console
+[tristan@web ~]$ sudo cat /etc/nginx/conf.d/site_web_nul.conf
+server {
+    listen 10.7.1.12:443 ssl;
+
+    ssl_certificate /etc/pki/tls/certs/web.tp7.b1.crt;
+    ssl_certificate_key /etc/pki/tls/private/web.tp7.b1.key;
+
+    server_name www.site_web_nul.b1;
+    root /var/www/site_web_nul;
+}
+```
+
+
+#### 🌞 Conf firewall
+
+```[tristan@web ~]$ sudo firewall-cmd --add-port=443/tcp --permanent
+success
+```
+
+#### 🌞 Prouvez que NGINX écoute sur le port 443/tcp
+
+[tristan@web ~]$ ss -atnl
+State   Recv-Q  Send-Q   Local Address:Port     Peer Address:Port  Process
+LISTEN  0       511          10.7.1.12:443           0.0.0.0:*
+LISTEN  0       511            0.0.0.0:80            0.0.0.0:*
+LISTEN  0       128            0.0.0.0:22            0.0.0.0:*
+LISTEN  0       511               [::]:80               [::]:*
+LISTEN  0       128               [::]:22               [::]:*
